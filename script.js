@@ -41,6 +41,7 @@ function showQuestion(question) {
     });
 
     function resetState() {
+        clearStatusClass(document.body)
         nextButton.classList.add("hide");
         while (answerButtonsElement.firstChild)
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
@@ -94,7 +95,7 @@ const questions = [
             {text: "Diverse oriental rug", correct: false},
             {text: "Dairy object milk", correct: false},
         ]
-    }    
+    },    
     {
         question: "Which is not an element?",
         answers: [
@@ -103,7 +104,7 @@ const questions = [
             {text: "google", correct: true},
             {text: "section", correct: false},
         ]
-    }    
+    },    
     {
         question: "What is it calles to store multiple values in a single variable?",
         answers: [
@@ -112,7 +113,7 @@ const questions = [
             {text: "Variable", correct: false},
             {text: "Array", correct: true},
         ]
-    }    
+    },    
     {
         question: "What is and API?",
         answers: [
