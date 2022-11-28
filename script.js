@@ -7,6 +7,10 @@ const answerButtonsElement = document.getElementById("answer-buttons")
 let shuffledQuestions, currentQuestionIndex;
 
 startButton.addEventListener("click", startGame);
+nextButton.addEventListener("click", () => {
+    currentQuestionIndex++
+    setNextQuestion()
+})
 
 function startGame() {
     startButton.classList.add("hide");
@@ -49,6 +53,12 @@ function selectAnswer(e) {
     Array.from(answerButtonsElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
+    if (shuffledQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove("hide")
+    } else {
+        startButton.innerText = "restart"
+        startButton.classList.remove("hide")
+    }
 
     nextButton.classList.remove("hide")
 
@@ -70,10 +80,46 @@ function clearStatusClass(element) {
 
 const questions = [
     {
-       question: "what is 2 + 2",
+       question: "Is JavaScrpit the same as Java?",
        answers: [
-        { text: "4", correct: true },
-        { text: "22", correct: false}
+        { text: "Yes", correct: true },
+        { text: "No", correct: false}
        ]
-    }
+    },
+    {
+        question: "What is the DOM?",
+        answers: [
+            {text: "Direct Over seer", correct: false},
+            {text: "Document Object Model", correct: true},
+            {text: "Diverse oriental rug", correct: false},
+            {text: "Dairy object milk", correct: false},
+        ]
+    }    
+    {
+        question: "Which is not an element?",
+        answers: [
+            {text: "main", correct: false},
+            {text: "header", correct: false},
+            {text: "google", correct: true},
+            {text: "section", correct: false},
+        ]
+    }    
+    {
+        question: "What is it calles to store multiple values in a single variable?",
+        answers: [
+            {text: "String", correct: false},
+            {text: "Function", correct: false},
+            {text: "Variable", correct: false},
+            {text: "Array", correct: true},
+        ]
+    }    
+    {
+        question: "What is and API?",
+        answers: [
+            {text: "Application Programming Interfaces", correct: true},
+            {text: "All points in", correct: false},
+            {text: "Any person intersted", correct: false},
+            {text: "Array points inward", correct: false},
+        ]
+    }    
 ]
