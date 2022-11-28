@@ -39,6 +39,7 @@ function showQuestion(question) {
         answerButtonsElement.appendChild(button);
         
     });
+}
 
     function resetState() {
         clearStatusClass(document.body)
@@ -46,7 +47,7 @@ function showQuestion(question) {
         while (answerButtonsElement.firstChild)
         answerButtonsElement.removeChild(answerButtonsElement.firstChild)
     }
-}
+
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
@@ -106,7 +107,7 @@ const questions = [
         ]
     },    
     {
-        question: "What is it calles to store multiple values in a single variable?",
+        question: "What is it called to store multiple values in a single variable?",
         answers: [
             {text: "String", correct: false},
             {text: "Function", correct: false},
